@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Doppler</title>
+	<script src="https://cdn.fromdoppler.com/mfe-loader/loader-v2.0.0.js"></script>
+	<script type="text/javascript">
+      window["style-guide-configuration"] = {
+        initFonts: true
+      };
+      assetServices.load({ manifestURL: "https://cdn.fromdoppler.com/doppler-style-guide/asset-manifest-V1.json", });
+
+      window["doppler-session-mfe-configuration"] = {
+        dopplerLegacyBaseUrl: "https://app2.fromdoppler.com",
+		useDummies : false
+      };
+      assetServices.load({ manifestURL: "https://cdn.fromdoppler.com/doppler-session-mfe/asset-manifest-v1.json" });
+
+      window["doppler-menu-mfe-configuration"] = {
+        dopplerMenuElementId: "doppler-menu-mfe",
+        dopplerLegacyBaseUrl: "https://app2.fromdoppler.com",
+		beamerId: 'wCWRrvwa50706'
+      };
+      assetServices.load({ manifestURL: "https://cdn.fromdoppler.com/doppler-menu-mfe/asset-manifest-v1.json" });
+	  
+	  window.addEventListener("doppler-session-state-update", () => {
+		console.log(window.dopplerSessionState);
+	  });
+	  
+	  window.addEventListener("DOMContentLoaded", () => {
+		console.log(window.dopplerSessionState);
+	  });
+    </script>
+  </head>
+  <body class="dp-library">
+    <div id="doppler-menu-mfe"> 
+    </div>
+  </body>
+</html>
